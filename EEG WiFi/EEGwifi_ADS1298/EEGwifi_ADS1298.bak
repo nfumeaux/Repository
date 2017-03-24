@@ -1,0 +1,140 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:nnclib
+LIBS:EEGwifi_ADS1298-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 2
+Title "EEG wifi system"
+Date "18 jan 2017"
+Rev ""
+Comp "NNC"
+Comment1 "Marcio Moraes"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Sheet
+S 2250 650  3300 2650
+U 587FA0FF
+F0 "ADS1298" 60
+F1 "ADS1298.sch" 60
+F2 "DVDD" I L 2250 900 60 
+F3 "~DRDY" I L 2250 2950 60 
+F4 "DGND" I L 2250 1000 60 
+F5 "SPI_MISO" O L 2250 2400 60 
+F6 "SPI_SCLK" I L 2250 2500 60 
+F7 "~SPI_~CS" I L 2250 2600 60 
+F8 "START" I L 2250 3050 60 
+F9 "CLK" I L 2250 3250 60 
+F10 "SPI_MOSI" I L 2250 2300 60 
+F11 "AGND" I L 2250 800 60 
+F12 "IN8N" I R 5550 750 60 
+F13 "IN8P" I R 5550 850 60 
+F14 "IN7N" I R 5550 1000 60 
+F15 "IN7P" I R 5550 1100 60 
+F16 "IN6N" I R 5550 1250 60 
+F17 "IN6P" I R 5550 1350 60 
+F18 "IN5N" I R 5550 1500 60 
+F19 "IN5P" I R 5550 1600 60 
+F20 "IN4N" I R 5550 1750 60 
+F21 "IN4P" I R 5550 1850 60 
+F22 "IN3P" I R 5550 2100 60 
+F23 "IN3N" I R 5550 2000 60 
+F24 "IN2P" I R 5550 2350 60 
+F25 "IN2N" I R 5550 2250 60 
+F26 "IN1P" I R 5550 2600 60 
+F27 "IN1N" I R 5550 2500 60 
+F28 "RLDOUT" O R 5550 2800 60 
+F29 "RLDINV" I L 2250 1750 60 
+F30 "CLKSEL" I L 2250 3150 60 
+F31 "AVDD" I L 2250 700 60 
+F32 "RLDIN" I L 2250 1950 60 
+F33 "VREFP" I L 2250 1650 60 
+F34 "RLDREF" I L 2250 1850 60 
+F35 "AVSS" I L 2250 1100 60 
+F36 "TESTP_PACE_OUT1" I L 2250 1300 60 
+F37 "TESTN_PACE_OUT2" I L 2250 1400 60 
+$EndSheet
+$Comp
+L ESP-32S M?
+U 1 1 58804D67
+P 8150 2250
+F 0 "M?" H 7500 3350 60  0000 C CNN
+F 1 "ESP-32S" H 8600 3350 60  0000 C CNN
+F 2 "" H 8200 3400 60  0001 C CNN
+F 3 "" H 7800 2500 60  0001 C CNN
+	1    8150 2250
+	1    0    0    -1  
+$EndComp
+Text GLabel 6650 4500 1    60   Input ~ 0
+spiMISO
+Text GLabel 6850 4500 1    60   Input ~ 0
+spiMOSI
+Text GLabel 7050 4500 1    60   Input ~ 0
+spiCLK
+Text GLabel 7200 4500 1    60   Input ~ 0
+~spiADScsSPI
+$Comp
+L +3.3V #PWR?
+U 1 1 5880F7B1
+P 7750 4000
+F 0 "#PWR?" H 7750 3850 50  0001 C CNN
+F 1 "+3.3V" H 7750 4140 50  0000 C CNN
+F 2 "" H 7750 4000 50  0000 C CNN
+F 3 "" H 7750 4000 50  0000 C CNN
+	1    7750 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5880F7D1
+P 7750 4350
+F 0 "#PWR?" H 7750 4100 50  0001 C CNN
+F 1 "GND" H 7750 4200 50  0000 C CNN
+F 2 "" H 7750 4350 50  0000 C CNN
+F 3 "" H 7750 4350 50  0000 C CNN
+	1    7750 4350
+	1    0    0    -1  
+$EndComp
+Text Notes 2700 750  3    60   ~ 0
+POWER
+Text Notes 5200 2700 1    60   ~ 0
+OUT TO PATIENT
+Text Notes 2800 2450 0    60   ~ 0
+SPI Controller
+Text Notes 2650 3100 0    60   ~ 0
+uController pins
+Text Notes 2750 1850 0    60   ~ 0
+RLD circuit
+$EndSCHEMATC
